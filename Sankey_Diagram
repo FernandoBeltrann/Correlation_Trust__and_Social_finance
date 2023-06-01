@@ -1,0 +1,32 @@
+fig = go.Figure(data=[go.Sankey(
+    node = dict(
+      pad = 15,
+      thickness = 20,
+      line = dict(color = "black", width = 0.5),
+      label = [
+               "ahorro de 0 a 17", #0
+               "ahorro de 18 a 29", #1
+               "ahorro de 30 a 39", #2
+               "ahorro de 40 a 49", #3
+               "ahorro de 50 a 59", #4
+               "ahorro de 60 a 69", #5
+               "ahorro de 70+" ,    #6
+
+               "prestamo de 0 a 17", #7
+               "prestamo de 18 a 29", #8
+               "prestamo de 30 a 39", #9
+               "prestamo de 40 a 49", #10
+               "ahorro de 50 a 59",  #11
+               "ahorro de 60 a 69", #12
+               "ahorro de 70+"      #13
+               ], #, "C1", "C2"],
+      color = "blue"
+    ),
+    link = dict(
+      source = [0,  0,  1,      1,  2,   3,     4, ],#, 3, 3], # indices correspond to labels, eg A1, A2, A2, B1, ...
+      target = [7,  9,  8,      9,  9,   10,    11, ],#, 4, 5],
+      value = [0.2, 2.9, 22.4, 0.4, 23.7, 22.2, 15.5, ],#, 4, 2]
+  ))])
+
+fig.update_layout(title_text="Basic Sankey Diagram", font_size=10)
+fig.show()
